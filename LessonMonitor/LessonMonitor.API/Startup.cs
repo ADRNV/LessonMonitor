@@ -30,6 +30,7 @@ namespace LessonMonitor.API
         {
 
             services.AddControllers();
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LessonMonitor.API", Version = "v1" });
@@ -50,16 +51,16 @@ namespace LessonMonitor.API
 
             app.UseRouting();
 
-            app.UseMyMiddleware();
+            //app.UseMyMiddleware();
 
             app.UseFileLogger();
 
-            //app.Use((httpContext, next) =>
-            //{
-            //    var task = next();
+            app.Use((httpContext, next) =>
+            {
+                var task = next();
 
-            //    return task;
-            //});
+                return task;
+            });
 
             app.UseEndpoints(endpoints =>
             {

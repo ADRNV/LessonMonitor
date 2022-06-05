@@ -11,26 +11,29 @@ namespace LessonMonitor.API.Meddlewares
     {
         private RequestDelegate _next;
 
-        private readonly string _path = "RequestLog.txt";
+        private readonly string _path;
         public FileLoggerMiddleware(RequestDelegate next)
         {
             _next = next;
 
-            _path += Environment.CurrentDirectory;
+            _path += Environment.CurrentDirectory+"\\RequestLog.txt";
         }
 
-        public async Task Invoke(HttpContext context, RequestDelegate next)
+        public async Task Invoke(HttpContext context)
         {
             if(context != null)
             {
-                using(FileStream fs = new FileStream(_path, FileMode.OpenOrCreate))
+                FileMode action = File.Exists(_path) ? FileMode.Append : FileMode.OpenOrCreate;
+
+                using (FileStream fs = new FileStream(_path, action))
                 {
-                    string message = $"Request to {context.Request.Path} | {context.Request.Method} | {context.Request.Headers} |";
+                    string message = $"Request to {context.Request.Path} | {context.Request.Method} | {context.Request.Headers} | \n";
                    
                     byte[] buffer = Encoding.UTF8.GetBytes(message);
 
                     fs.Write(buffer, 0, buffer.Length);
                 }
+
             }
             else
             {
