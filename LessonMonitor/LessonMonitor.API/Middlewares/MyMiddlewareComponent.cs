@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 
-namespace LessonMonitor.API
+
+namespace LessonMonitor.API.Meddlewares
 {
     public class MyMiddlewareComponent
     {
@@ -12,9 +13,9 @@ namespace LessonMonitor.API
             _next = next;
         }
 
-        public Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context)
         {
-            return _next(context);
+            await _next(context);
         }
     }
 }

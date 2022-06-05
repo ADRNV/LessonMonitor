@@ -1,3 +1,5 @@
+using LessonMonitor.API.Meddlewares;
+using LessonMonitor.API.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -48,7 +50,9 @@ namespace LessonMonitor.API
 
             app.UseRouting();
 
-            //app.UseMiddleware<MyMiddlewareComponent>();
+            app.UseMyMiddleware();
+
+            app.UseFileLogger();
 
             //app.Use((httpContext, next) =>
             //{
