@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LessonMonitor.API.Services;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,30 +9,25 @@ using System.Reflection.Metadata;
 namespace LessonMonitor.API.Controllers
 {
     [ApiController]
-    [Route("reflect")]
+    [Route("Reflection")]
     public class ReflectController : ControllerBase
     {
-        ReflectController()
+        private ReflectionService _reflectionService;
+        public ReflectController()
         {
-
+            _reflectionService = new ReflectionService();
         }
 
-        [HttpGet]
-        public Type[] Reflection()
+        [HttpGet("Types/{nameSpace}")]
+        public Dictionary<string, List<string>> TypesInformation(string nameSpace)
         {
-            Assembly assembly = Assembly.GetExecutingAssembly();
-
-            Type[] types = GetTypesInNamespace(assembly, "LessonMonitor.API.Models");
-
-            return types;
+            return _reflectionService.GetTypesInformation(nameSpace);
         }
 
-        private Type[] GetTypesInNamespace(Assembly assembly, string nameSpace)
+        [HttpGet("Types/{nameSpace}/{typeName}")]
+        public List<string> TypeInformation(string nameSpace, string typeName)
         {
-            return
-              assembly.GetTypes()
-                      .Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal))
-                      .ToArray();
+            return _reflectionService.GetTypesInformation(nameSpace)[typeName];
         }
     }
 }
