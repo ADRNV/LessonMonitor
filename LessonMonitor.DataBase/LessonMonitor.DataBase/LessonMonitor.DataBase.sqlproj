@@ -63,5 +63,6 @@
     <Build Include="Skills.sql" />
     <Build Include="Topics.sql" />
     <Build Include="Questions.sql" />
+    <Build Include="MembersAccounts.sql" />
   </ItemGroup>
 </Project>
