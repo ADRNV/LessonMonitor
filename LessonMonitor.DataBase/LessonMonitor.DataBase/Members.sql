@@ -5,5 +5,6 @@
 	[Age] INT,
 	[Links] NCHAR(300),
 	[Nicknames] NCHAR(300),
-	LessonPk INTEGER NOT NULL FOREIGN KEY REFERENCES Lessons(LessonId)
+	[LessonId] INT NOT NULL CONSTRAINT FkLesson FOREIGN KEY (LessonId) 
+        REFERENCES dbo.Lessons(LessonId)
 )
