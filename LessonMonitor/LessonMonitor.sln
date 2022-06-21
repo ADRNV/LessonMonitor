@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonMonitor.Core", "LessonMonitor.Core\LessonMonitor.Core.csproj", "{2457FB1E-4331-4DA3-9810-1E2FFD25B08D}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "LessonMonitor.DataBase", "LessonMonitor.DataBase\LessonMonitor.DataBase.sqlproj", "{28E4F44E-C2E9-43BB-B3DB-4EB792EF397D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,12 @@ Global
 		{2457FB1E-4331-4DA3-9810-1E2FFD25B08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2457FB1E-4331-4DA3-9810-1E2FFD25B08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2457FB1E-4331-4DA3-9810-1E2FFD25B08D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28E4F44E-C2E9-43BB-B3DB-4EB792EF397D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E4F44E-C2E9-43BB-B3DB-4EB792EF397D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E4F44E-C2E9-43BB-B3DB-4EB792EF397D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{28E4F44E-C2E9-43BB-B3DB-4EB792EF397D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E4F44E-C2E9-43BB-B3DB-4EB792EF397D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28E4F44E-C2E9-43BB-B3DB-4EB792EF397D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
