@@ -1,4 +1,4 @@
-﻿namespace LessonMonitor.Core.Entities
+﻿namespace LessonMonitor.Core
 {
     public class Topic
     {

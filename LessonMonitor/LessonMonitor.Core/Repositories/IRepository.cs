@@ -4,7 +4,7 @@ namespace LessonMonitor.Core.Repositories
 {
     public interface IRepository<T>
     {
-        List<T> Get();
+        T[] Get();
 
         T Get(int id);
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LessonMonitor.Core.Entities
+namespace LessonMonitor.Core
 {
     public class Lesson
     {

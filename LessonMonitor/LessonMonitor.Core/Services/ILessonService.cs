@@ -1,7 +1,7 @@
-﻿using LessonMonitor.Core.Entities;
+﻿using LessonMonitor.Core;
 using System.Threading.Tasks;
 
-namespace LessonMonitor.Services
+namespace LessonMonitor.Core.Services
 {
     public interface ILessonService
     {

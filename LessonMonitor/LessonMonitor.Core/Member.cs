@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace LessonMonitor.Core.Entities
+namespace LessonMonitor.Core
 {
     public class Member
     {
