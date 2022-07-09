@@ -6,13 +6,13 @@ using LessonMonitor.DataAccess;
 
 namespace LessonMonitor.BL
 {
-    public class LessonService : ILessonService
+    public class LessonsService : ILessonsService
     {
         private readonly IRepository<Lesson> _lessonRepository;
 
-        public LessonService()
+        public LessonsService(IRepository<Lesson> lessonRepository)
         {
-            _lessonRepository = new LessonsRepository();
+            _lessonRepository = lessonRepository;
         }
 
         public async Task Create(Lesson lesson)

@@ -9,11 +9,10 @@ namespace LessonMonitor.API.Controllers
     [Route("api/[controller]")]
     public class LessonsController : ControllerBase
     {
-        private ILessonService _lessonService;
-
-        public LessonsController()
+        private readonly ILessonsService _lessonService;
+        public LessonsController(ILessonsService lessonService)
         {
-            _lessonService = new LessonService();
+            _lessonService = lessonService;
         }
 
        [HttpPost("lessons/{lesson}")]
