@@ -6,7 +6,7 @@ namespace LessonMonitor.DataAccess
 {
     public class MembersRepository : IRepository<Member>
     {
-        public void Add(Member entity)
+        public int Add(Member entity)
         {
             throw new NotImplementedException();
         }
@@ -21,12 +21,12 @@ namespace LessonMonitor.DataAccess
             throw new NotImplementedException();
         }
 
-        public void Remove(int id)
+        public bool Remove(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Member entity, int id)
+        public int Update(Member entity, int id)
         {
             throw new NotImplementedException();
         }

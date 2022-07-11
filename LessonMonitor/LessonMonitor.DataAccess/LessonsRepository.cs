@@ -15,9 +15,11 @@ namespace LessonMonitor.DataAccess
                 Topic = "Pagination"
             } 
         };
-        public void Add(Lesson entity)
+        public int Add(Lesson entity)
         {
             _lessons.Add(entity);
+
+            return entity.Id;
         }
 
         public Lesson[] Get()
@@ -27,17 +29,28 @@ namespace LessonMonitor.DataAccess
 
         public Lesson Get(int id)
         {
-            throw new System.NotImplementedException();
+           return _lessons.Find(l => l.Id == id);
         }
 
-        public void Remove(int id)
+        public bool Remove(int id)
         {
-            throw new System.NotImplementedException();
+            if (_lessons.Remove(_lessons.Find(l => l.Id == id)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public void Update(Lesson entity, int id)
+        public int Update(Lesson entity, int id)
         {
-            throw new System.NotImplementedException();
+           var index = _lessons.FindIndex(l => l.Id == id);
+
+            _lessons[index] = entity;
+
+            return id;
         }
     }
 }

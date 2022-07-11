@@ -8,10 +8,10 @@ namespace LessonMonitor.Core.Repositories
 
         T Get(int id);
 
-        void Add(T entity);
+        int Add(T entity);
 
-        void Update(T entity, int id);
+        int Update(T entity, int id);
 
-        void Remove(int id);
+        bool Remove(int id);
     }
 }
